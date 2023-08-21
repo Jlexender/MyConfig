@@ -153,6 +153,7 @@ Plug 'valloric/youcompleteme'
 " Remove <Tab> from the list of keys mapped by YCM.
 	let g:ycm_key_list_select_completion = ['<Down>']
 	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "ᐅ"
+	let g:ycm_show_diagnostics_ui = 0
 
 " AutoClose brackets
 Plug 'townk/vim-autoclose'
