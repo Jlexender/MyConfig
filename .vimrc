@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 "               
 "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
@@ -13,7 +13,7 @@
 set nocompatible
 
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
-filetype on
+filetype off
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
@@ -115,53 +115,56 @@ highlight Pmenu ctermbg=gray guibg=gray
 " No more weird tilde blue color
 highlight NonText ctermfg=8
 
-" Plugins will be downloaded under the specified directory.
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'Valloric/YouCompleteMe'
 
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+	" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
-Plug 'sirver/ultisnips'
+Plugin 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
     let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-Plug 'lervag/vimtex'
+Plugin 'lervag/vimtex'
     let g:tex_flavor='latex'
     let g:vimtex_view_method='zathura'
     let g:vimtex_quickfix_mode=0
 
-Plug 'KeitaNakamura/tex-conceal.vim'
+Plugin 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
 " If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
-
+	
 " Exit INSERT MODE
-Plug 'jdhao/better-escape.vim'
-	let g:better_escape_shortcut = ['jj']
+Plugin 'jdhao/better-escape.vim'
+	let g:better_escape_shortcut = ['jk', 'kj']
 
 " File manager basically
-Plug 'preservim/nerdtree'
+Plugin 'preservim/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
 
 " Theme manager
-Plug 'dylanaraps/wal'
+Plugin 'dylanaraps/wal'
 
-Plug 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme'
 " Remove <Tab> from the list of keys mapped by YCM.
-	let g:ycm_key_list_select_completion = ['<Down>']
-	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "ᐅ"
-	let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_show_diagnostics_ui = 0
 
 " AutoClose brackets
-Plug 'townk/vim-autoclose'
+Plugin 'townk/vim-autoclose'
 
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
+call vundle#end() 
+
+filetype plugin indent on    " required
 
 " Set dark theme for terminal
+
 colorscheme wal
 set background=dark
 
