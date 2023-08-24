@@ -23,9 +23,6 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -83,7 +80,12 @@ Plugin 'dylanaraps/wal'
 
 " This plugin for Vim enable an auto-close chars feature for you.
 Plugin 'townk/vim-autoclose'
-	
+
+" Neovim and Vim plug-in that provides an extremely fast "fuzzy" mechanism for
+" opening, running, jumping to files with a minimum of keystrokes
+Plugin 'Command-T'
+	nmap <C-t> :CommandT<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
