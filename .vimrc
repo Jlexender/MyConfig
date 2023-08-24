@@ -118,8 +118,11 @@ highlight NonText ctermfg=8
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'Valloric/YouCompleteMe'
+" Remove <Tab> from the list of keys mapped by YCM.
+	let g:ycm_key_list_select_completion = ['<Down>']
+	let g:ycm_show_diagnostics_ui = 0
 
-	" Snippets are separated from the engine. Add this if you want them:
+" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 Plugin 'sirver/ultisnips'
@@ -151,20 +154,14 @@ map <C-n> :NERDTreeToggle<CR>
 " Theme manager
 Plugin 'dylanaraps/wal'
 
-Plugin 'valloric/youcompleteme'
-" Remove <Tab> from the list of keys mapped by YCM.
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_show_diagnostics_ui = 0
-
 " AutoClose brackets
 Plugin 'townk/vim-autoclose'
 
 call vundle#end() 
 
-filetype plugin indent on    " required
+filetype plugin indent on 
 
 " Set dark theme for terminal
-
 colorscheme wal
 set background=dark
 
