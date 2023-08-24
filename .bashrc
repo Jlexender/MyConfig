@@ -90,7 +90,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -116,5 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# test	
+# Set colorscheme for terminal
 wal -q --theme base16-nord
+
