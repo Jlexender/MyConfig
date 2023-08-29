@@ -37,7 +37,7 @@ Plugin 'Valloric/YouCompleteMe'
 	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 	let g:SuperTabDefaultCompletionType = '<C-n>'
-
+	
 " UltiSnips is the ultimate solution for snippets in Vim. It has many features, speed being one of them.
 Plugin 'SirVer/ultisnips'
 
@@ -115,6 +115,7 @@ set shiftwidth=4
 set tabstop=4
 set mouse=a
 set backspace=indent,eol,start
+set completeopt-=preview
 
 " SEARCHING & MOVING
 set wrap
@@ -136,9 +137,9 @@ autocmd InsertLeave * :set relativenumber
 set history=100
 
 " Autocompletion & spell correction
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+setlocal nospell
 set spelllang=en_us
-set nospell
+inoremap <C-l> <Esc>[s1z=`]a
 
 " VISUALS
 
