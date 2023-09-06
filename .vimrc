@@ -59,7 +59,7 @@ Plugin 'lervag/vimtex'
     let g:tex_flavor='latex'
     let g:vimtex_view_method='zathura'
     let g:vimtex_quickfix_mode=0
-
+	
 " A vim plugin extends the Conceal feature for LaTeX.
 Plugin 'KeitaNakamura/tex-conceal.vim'
     set conceallevel=1
@@ -79,13 +79,17 @@ Plugin 'preservim/nerdtree'
 Plugin 'dylanaraps/wal'
 
 " This plugin for Vim enable an auto-close chars feature for you.
-Plugin 'townk/vim-autoclose'
+" Plugin 'townk/vim-autoclose'
 
 " Neovim and Vim plug-in that provides an extremely fast "fuzzy" mechanism for
 " opening, running, jumping to files with a minimum of keystrokes
 Plugin 'Command-T'
 	nmap <C-t> :CommandT<CR>
 
+" Asynchronous translating plugin for Vim
+Plugin 'voldikss/vim-translator'
+	let g:translator_target_lang='ru'
+	let g:translator_source_lang='en'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -138,8 +142,10 @@ set history=100
 
 " Autocompletion & spell correction
 setlocal nospell
-set spelllang=en_us
+set spelllang=ru,en_us
+let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 inoremap <C-l> <Esc>[s1z=`]a
+inoremap $$ $$<Left>
 
 " VISUALS
 

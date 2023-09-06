@@ -93,6 +93,7 @@ alias la='ls -A'
 alias l='ls'
 
 alias setup='cp -r ~/itmo-lectures/Sample/* ./'
+alias reln='rm ~/current-course && ln -s "$(pwd)" ~/current-course' 
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
