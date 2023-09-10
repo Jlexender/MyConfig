@@ -94,6 +94,7 @@ alias l='ls'
 
 alias setup='cp -r ~/itmo-lectures/Sample/* ./'
 alias reln='rm ~/current-course && ln -s "$(pwd)" ~/current-course' 
+alias ink='~/AppImages/Inkscape.AppImage &'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,3 +122,4 @@ fi
 
 # Set colorscheme for terminal
 wal -q --theme base16-nord
+

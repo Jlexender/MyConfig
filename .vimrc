@@ -105,7 +105,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " GENERAL
-filetype indent on
+filetype indent off
 syntax on
 set number
 set nocursorline
@@ -120,6 +120,7 @@ set tabstop=4
 set mouse=a
 set backspace=indent,eol,start
 set completeopt-=preview
+set autoindent
 
 " SEARCHING & MOVING
 set wrap
@@ -159,3 +160,4 @@ let &t_SR = "\e[3 q"
 
 highlight Pmenu ctermbg=gray guibg=gray
 highlight NonText ctermfg=8
+
