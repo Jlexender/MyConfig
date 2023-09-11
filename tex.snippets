@@ -4,6 +4,9 @@
 
 global !p
 
+def fix_indent(snip):
+    vim.eval('feedkeys("\<c-f>")')
+
 def create_table(snip):
 	rows = snip.buffer[snip.line].split('x')[0]
 	cols = snip.buffer[snip.line].split('x')[1]
@@ -355,7 +358,8 @@ snippet rm "Text" wi
 \textrm{${1:${VISUAL}}}$0
 endsnippet
 
-snippet itm "Item" w
+post_expand "fix_indent(snip)"
+snippet itm "Item" wi
 \item ${0:${VISUAL}} 
 endsnippet
 
@@ -510,7 +514,7 @@ snippet xx "cross" Aw
 \times 
 endsnippet
 
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwi
 \\`!p snip.rv = match.group(1)`
 endsnippet
 

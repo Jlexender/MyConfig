@@ -44,7 +44,7 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
-" You need to change this to something other than <tab> (TODO)
+" You need to change this to something other than <tab> 
 	let g:UltiSnipsExpandTrigger="<tab>"
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -105,7 +105,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " GENERAL
-filetype indent off
+filetype indent on
 syntax on
 set number
 set nocursorline
@@ -120,7 +120,6 @@ set tabstop=4
 set mouse=a
 set backspace=indent,eol,start
 set completeopt-=preview
-set autoindent
 
 " SEARCHING & MOVING
 set wrap
