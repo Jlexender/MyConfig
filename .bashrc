@@ -113,3 +113,5 @@ fi
 # Set colorscheme for terminal
 wal -q --theme base16-nord
 
+# fix java autocompletion
+complete -o default java
