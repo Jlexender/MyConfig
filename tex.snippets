@@ -166,6 +166,10 @@ snippet fig "Figure environment" bi
 \end{figure}
 endsnippet
 
+snippet inkf "Inkscape figure" bi
+\incfig{$1} $0
+endsnippet
+
 snippet enum "Enumerate" bi
 \begin{enumerate}
 	\item ${0:${VISUAL}}
@@ -393,7 +397,7 @@ endsnippet
 
 context "math()"
 snippet lr( "left( right)" i
-\left( ${1:${VISUAL}} \right$0
+\left( ${1:${VISUAL}} \right $0
 endsnippet
 
 context "math()"
@@ -427,6 +431,16 @@ endsnippet
 
 snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+endsnippet
+
+context "math()"
+snippet os "overset" i
+\overset{${1:${VISUAL}}} $0
+endsnippet
+
+context "math()"
+snippet us "underset" i
+\underset{${1:${VISUAL}}} $0
 endsnippet
 
 context "math()"
@@ -471,12 +485,12 @@ endsnippet
 
 context "math()"
 snippet =< "Implied by" w
-\Leftarrow
+\Leftarrow 
 endsnippet
 
 context "math()"
 snippet iff "iff" w
-\Leftrightarrow
+\Leftrightarrow 
 endsnippet
 
 context "math()"
@@ -506,7 +520,7 @@ endsnippet
 
 context "math()"
 snippet lll "l" w
-\ell
+\ell 
 endsnippet
 
 context "math()"
@@ -514,7 +528,7 @@ snippet xx "cross" Aw
 \times 
 endsnippet
 
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwi
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|sup|min|max)' "ln" rwi
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -729,6 +743,11 @@ snippet sr "^2" iA
 endsnippet
 
 context "math()"
+snippet tt "insert text" wi 
+\text{ $1${VISUAL} } 
+endsnippet
+
+context "math()"
 snippet cb "^3" iA
 ^3
 endsnippet
@@ -736,6 +755,11 @@ endsnippet
 context "math()"
 snippet compl "complement" iA
 ^{c}
+endsnippet
+
+context "math()"
+snippet es "empty set" i
+\emptyset 
 endsnippet
 
 context "math()"

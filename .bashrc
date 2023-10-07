@@ -94,7 +94,6 @@ alias l='ls'
 
 alias setup='cp -r ~/itmo-lectures/Sample/* ./'
 alias reln='rm ~/current-course && ln -s "$(pwd)" ~/current-course' 
-alias draw='~/AppImages/Inkscape.AppImage &'
 alias browse='nautilus $PWD &'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -115,3 +114,6 @@ wal -q --theme base16-nord
 
 # fix java autocompletion
 complete -o default java
+
+# gradle 
+export PATH=$PATH:/opt/gradle/gradle-8.4/bin
